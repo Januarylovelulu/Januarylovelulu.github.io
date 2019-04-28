@@ -1,4 +1,6 @@
 function login(meme) {
+	if(!checkElementLegalChangePage())
+		return;
 	var url = location.href;
 	url = url.split("#")[0]; 
 	var parameterStr = url.split("?")[1]; 
@@ -40,6 +42,47 @@ function checkKey(old,num,newstr)
 	else
 		return false;	
 }
+function checkElementLegalChangePage()
+{
+	var url = location.href;
+	url = url.split("#")[0]; 
+	var parameterStr = url.split("?")[1]; 
+	var str=[];
+	var myDate = new Date();
+	var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
+	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)
+	{
+		parameterStr = url.split("?")[0]; 
+		var strList=[];
+		strList=parameterStr.split("/");
+		for(var x=0;x<strList.length;x++)
+		{
+			if(strList[x]=="home")
+				return true;
+		}
+  }
+	else
+	{
+		str = parameterStr.split("&");
+		if(str.length==3)
+		{
+			if(time-str[1]<=30)
+			{
+				if(checkKey(str[0],str[1],str[2]))
+					return true;
+			}
+			else
+			{
+				alert("页面超时！请重新回答问题再继续访问当前页面");
+				window.location.assign("/Januarylovelulu.github.io/home/index.html");
+				return false;
+			}
+		}
+	}
+	alert("非法操作！拒绝访问当前页面");
+	window.location.assign("/Januarylovelulu.github.io/home/index.html");
+	return false;
+}
 function checkElementLegal()
 {
 	var url = location.href;
@@ -56,7 +99,7 @@ function checkElementLegal()
 		for(var x=0;x<strList.length;x++)
 		{
 			if(strList[x]=="home")
-				return;
+				return true;
 		}
   }
 	else
@@ -64,21 +107,22 @@ function checkElementLegal()
 		str = parameterStr.split("&");
 		if(str.length==3)
 		{
-			if(time-str[1]<=6)
+			if(time-str[1]<=1)
 			{
 				if(checkKey(str[0],str[1],str[2]))
-					return ;
+					return true;
 			}
 			else
 			{
 				alert("页面超时！请重新回答问题再继续访问当前页面");
 				window.location.assign("/Januarylovelulu.github.io/home/index.html");
-				return;
+				return false;
 			}
 		}
 	}
 	alert("非法操作！拒绝访问当前页面");
 	window.location.assign("/Januarylovelulu.github.io/home/index.html");
+	return false;
 }
 
 /*
