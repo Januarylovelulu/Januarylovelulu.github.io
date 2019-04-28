@@ -5,9 +5,11 @@ function check(){
 	if (pWord != real) {
 		document.getElementById("password").value="回答错误，拒绝访问！";
 	}else{
-		var random=parseInt(Math.random()*(16-1+1)+1,10)+"";
+		var myDate = new Date();
+		var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
 		var str=getTextValue();
-		window.location.href="/Januarylovelulu.github.io/"+str+"/index.html?"+getKey("random",random)+"&"+random+"&"+getKey(getKey("random",random),random).substr(0,random);
+		window.location.href="/Januarylovelulu.github.io/"+str+"/index.html?"+getKey("random",time)+"&"+time+"&"+
+					getKey(getKey("random",time),time).substr(0,time%16+1);
 	}
 }
 function KeyDown()
@@ -29,13 +31,6 @@ function clear1()
 function getKey(str,num)
 {
 	return hex_md5(str+num);
-}
-function checkKey(old,num,newstr)
-{
-	if(hex_md5(old+num)==newstr)
-		return true;
-	else
-		return false;	
 }
 
 /*

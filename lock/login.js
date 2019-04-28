@@ -1,21 +1,24 @@
 function login(meme) {
 	var url = location.href;
+	url = url.split("#")[0]; 
 	var parameterStr = url.split("?")[1]; 
 	var str=[];
 	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)
 	{
-        if(meme=='home')
-			window.location.assign("/Januarylovelulu.github.io/home/index.html");
-		else
-			window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
-    }
+			if(meme=='home')
+				window.location.assign("/Januarylovelulu.github.io/home/index.html");
+			else
+				window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
+	}
 	else
 	{
 		str = parameterStr.split("&");
 		if(checkKey(str[0],str[1],str[2]))
 		{
-			var random=parseInt(Math.random()*(16-1+1)+1,10)+"";
-			window.location.assign("/Januarylovelulu.github.io/"+meme+"/index.html?"+getKey(str[0],str[1])+"&"+random+"&"+getKey(getKey(str[0],str[1]),random).substr(0,random));
+			var myDate = new Date();
+			var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
+			window.location.assign("/Januarylovelulu.github.io/"+meme+"/index.html?"+getKey(str[0],str[1])+
+						"&"+time+"&"+getKey(getKey(str[0],str[1]),time).substr(0,time%16+1));
 		}
 		else
 		{
@@ -32,7 +35,7 @@ function getKey(str,num)
 }
 function checkKey(old,num,newstr)
 {
-	if(hex_md5(old+num).substr(0,num)==newstr)
+	if(hex_md5(old+num).substr(0,num%16+1)==newstr)
 		return true;
 	else
 		return false;	
@@ -40,20 +43,37 @@ function checkKey(old,num,newstr)
 function checkElementLegal()
 {
 	var url = location.href;
+	url = url.split("#")[0]; 
 	var parameterStr = url.split("?")[1]; 
 	var str=[];
+	var myDate = new Date();
+	var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
 	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)
 	{
-		
-    }
+		parameterStr = url.split("?")[0]; 
+		var strList=[];
+		strList=parameterStr.split("/");
+		for(var x=0;x<strList.length;x++)
+		{
+			if(strList[x]=="home")
+				return;
+		}
+  }
 	else
 	{
 		str = parameterStr.split("&");
 		if(str.length==3)
 		{
-			if(checkKey(str[0],str[1],str[2]))
+			if(time-str[1]<=6)
 			{
-				return ;
+				if(checkKey(str[0],str[1],str[2]))
+					return ;
+			}
+			else
+			{
+				alert("页面超时！请重新回答问题再继续访问当前页面");
+				window.location.assign("/Januarylovelulu.github.io/home/index.html");
+				return;
 			}
 		}
 	}
