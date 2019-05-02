@@ -1,36 +1,18 @@
 function login(meme) {
-	if(!checkElementLegal(20))
-		return;
-	var url = location.href;
-	url = url.split("#")[0]; 
-	var parameterStr = url.split("?")[1]; 
-	var str=[];
-	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)
+	if(checkElementLegal(0,meme))
 	{
-		if(meme=='home')
-			window.location.assign("/Januarylovelulu.github.io/home/index.html");
-		else
-			window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
-	}
-	else
-	{
+		var url = location.href;
+		url = url.split("#")[0]; 
+		var parameterStr = url.split("?")[1]; 
+		var str=[];
 		str = parameterStr.split("&");
-		if(checkKey(str[0],str[1],str[2]))
-		{
-			var myDate = new Date();
-			var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
-			window.location.assign("/Januarylovelulu.github.io/"+meme+"/index.html?"+getKey(str[0],str[1])+
-						"&"+time+"&"+getKey(getKey(str[0],str[1]),time).substr(0,time%16+1));
-		}
-		else
-		{
-			if(meme=='home')
-				window.location.assign("/Januarylovelulu.github.io/home/index.html");
-			else
-				window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
-		}
+		var myDate = new Date();
+		var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
+		window.location.assign("/Januarylovelulu.github.io/"+meme+"/index.html?"+getKey(str[0],str[1])+
+					"&"+time+"&"+getKey(getKey(str[0],str[1]),time).substr(0,time%16+1));
 	}
 }
+
 function getKey(str,num)
 {
 	return hex_md5(str+num);
@@ -42,31 +24,44 @@ function checkKey(old,num,newstr)
 	else
 		return false;	
 }
-function checkElementLegal(refreshTime = 1)
+function checkElementLegal(refreshTime = 1,meme="")
 {
 	var url = location.href;
 	url = url.split("#")[0]; 
 	var parameterStr = url.split("?")[1]; 
+	if(meme==""&&parameterStr=="WARNING")//想越过问题就访问重要网页的情况
+	{
+		alert("请不要试图越过问题检测来访问重要网页！");
+		window.location.assign("/Januarylovelulu.github.io/home/index.html");
+		return false;
+	}
 	var str=[];
 	var myDate = new Date();
 	var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
-	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)
+	if(parameterStr == "" || parameterStr == null || parameterStr == undefined)//没有防伪码
 	{
 		var str1 = url.split("?")[0]; 
 		var strList=[];
 		strList=str1.split("/");
 		for(var x=0;x<strList.length;x++)
 		{
-			if(strList[x]=="home")
-				return true;
+			if(strList[x]=="home")//如果为home页面
+			{
+				if(meme!="")//如果是login函数跳转
+					window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
+				return false;
+			}
 		}
+		//如果不为home页面，则为其他重要页面的无防伪码页面
+		window.location.assign("/Januarylovelulu.github.io/home/index.html?WARNING");
+		return false;
 	}
 	else
 	{
 		str = parameterStr.split("&");
 		if(str.length==3)
 		{
-			if(time-str[1]<=refreshTime)
+			if(time-str[1]<=refreshTime)//页面的刷新时间没有过期
 			{
 				if(checkKey(str[0],str[1],str[2]))
 					return true;
@@ -76,7 +71,7 @@ function checkElementLegal(refreshTime = 1)
 				var str1 = url.split("?")[0]; 
 				var strList=[];
 				strList=str1.split("/");
-				for(var x=0;x<strList.length;x++)
+				for(var x=0;x<strList.length;x++)//页面失效时，当前页面为home，清除防伪码
 				{
 					if(strList[x]=="home")
 					{
@@ -84,17 +79,22 @@ function checkElementLegal(refreshTime = 1)
 						return false;
 					}
 				}
+				
 				if(checkKey(str[0],str[1],str[2]))
+				{
 					alert("页面超时！请重新回答问题再继续访问当前页面");
-				else
-					alert("非法操作！拒绝访问当前页面");
-				window.location.assign("/Januarylovelulu.github.io/home/index.html");
-				return false;
+					if(meme=="")//如果是重新刷新了浏览器
+						window.location.assign("/Januarylovelulu.github.io/home/index.html");
+					else//此为login函数跳转的
+						window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
+					return false;
+				}
 			}
 		}
+		window.location.assign("/Januarylovelulu.github.io/home/index.html?WARNING");
+		return false;
 	}
-	alert("非法操作！拒绝访问当前页面");
-	window.location.assign("/Januarylovelulu.github.io/home/index.html");
+	window.location.assign("/Januarylovelulu.github.io/home/index.html?WARNING");
 	return false;
 }
 

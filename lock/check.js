@@ -8,8 +8,8 @@ function check(){
 		var myDate = new Date();
 		var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
 		var str=getTextValue();
-		window.location.href="/Januarylovelulu.github.io/"+str+"/index.html?"+getKey("random",time)+"&"+time+"&"+
-					getKey(getKey("random",time),time).substr(0,time%16+1);
+		window.location.href="/Januarylovelulu.github.io/"+str+"/index.html?"+getKey("lulu",time)+"&"+time+"&"+
+					getKey(getKey("lulu",time),time).substr(0,time%16+1);
 	}
 }
 function backPage()
