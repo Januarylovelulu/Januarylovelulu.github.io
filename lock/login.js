@@ -31,7 +31,7 @@ function checkElementLegal(refreshTime = 1,meme="")
 	var parameterStr = url.split("?")[1]; 
 	if(meme==""&&parameterStr=="WARNING")//想越过问题就访问重要网页的情况
 	{
-		alert("请不要试图越过问题检测来访问重要网页！");
+		alert("请不要试图越过问题检测来访问权限网页！");
 		window.location.assign("/Januarylovelulu.github.io/home/index.html");
 		return false;
 	}
@@ -91,8 +91,6 @@ function checkElementLegal(refreshTime = 1,meme="")
 				}
 			}
 		}
-		window.location.assign("/Januarylovelulu.github.io/home/index.html?WARNING");
-		return false;
 	}
 	window.location.assign("/Januarylovelulu.github.io/home/index.html?WARNING");
 	return false;
