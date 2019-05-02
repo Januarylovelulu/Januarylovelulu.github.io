@@ -12,6 +12,10 @@ function check(){
 					getKey(getKey("random",time),time).substr(0,time%16+1);
 	}
 }
+function backPage()
+{
+	history.back();
+}
 function KeyDown()
 {
 	if (event.keyCode == 13)
