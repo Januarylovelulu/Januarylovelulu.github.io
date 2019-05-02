@@ -1,5 +1,5 @@
 function login(meme) {
-	if(checkElementLegal(0,meme))
+	if(checkElementLegal(20,meme))
 	{
 		var url = location.href;
 		url = url.split("#")[0]; 
