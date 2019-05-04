@@ -48,7 +48,12 @@ function checkElementLegal(refreshTime = 1,meme="")
 			if(strList[x]=="home")//如果为home页面
 			{
 				if(meme!="")//如果是login函数跳转
-					window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
+				{
+					if(meme!="home")
+						window.location.assign("/Januarylovelulu.github.io/lock/index.html"+"?"+meme); 
+					else
+						window.location.assign("/Januarylovelulu.github.io/home/index.html");
+				}
 				return false;
 			}
 		}
