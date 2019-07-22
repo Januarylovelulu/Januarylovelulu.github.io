@@ -8,7 +8,7 @@ function login(meme) {
 		str = parameterStr.split("&");
 		var myDate = new Date();
 		var time=myDate.getMonth()+1+""+myDate.getHours()+""+myDate.getMinutes();
-		window.location.assign("../"+meme+"/index.html?"+getKey(str[0],str[1])+
+		window.location.assign("../"+meme+"?"+getKey(str[0],str[1])+
 					"&"+time+"&"+getKey(getKey(str[0],str[1]),time).substr(0,time%16+1));
 	}
 }
@@ -32,7 +32,7 @@ function checkElementLegal(refreshTime = 1,meme="")
 	if(meme==""&&parameterStr=="WARNING")//想越过问题就访问重要网页的情况
 	{
 		alert("请不要试图越过问题检测来访问权限网页！");
-		window.location.assign("../home/index.html");
+		window.location.assign("../home");
 		return false;
 	}
 	var str=[];
@@ -50,15 +50,15 @@ function checkElementLegal(refreshTime = 1,meme="")
 				if(meme!="")//如果是login函数跳转
 				{
 					if(meme!="home")
-						window.location.assign("../lock/index.html"+"?"+meme); 
+						window.location.assign("../lock"+"?"+meme); 
 					else
-						window.location.assign("../home/index.html");
+						window.location.assign("../home");
 				}
 				return false;
 			}
 		}
 		//如果不为home页面，则为其他重要页面的无防伪码页面
-		window.location.assign("../home/index.html?WARNING");
+		window.location.assign("../home?WARNING");
 		return false;
 	}
 	else
@@ -80,7 +80,7 @@ function checkElementLegal(refreshTime = 1,meme="")
 				{
 					if(strList[x]=="home")
 					{
-						window.location.assign("../home/index.html");
+						window.location.assign("../home");
 						return false;
 					}
 				}
@@ -89,15 +89,15 @@ function checkElementLegal(refreshTime = 1,meme="")
 				{
 					alert("页面超时！请重新回答问题再继续访问当前页面");
 					if(meme=="")//如果是重新刷新了浏览器
-						window.location.assign("../home/index.html");
+						window.location.assign("../home");
 					else//此为login函数跳转的
-						window.location.assign("../lock/index.html"+"?"+meme); 
+						window.location.assign("../lock"+"?"+meme); 
 					return false;
 				}
 			}
 		}
 	}
-	window.location.assign("../home/index.html?WARNING");
+	window.location.assign("../home?WARNING");
 	return false;
 }
 
