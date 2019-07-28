@@ -1,245 +1,320 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>抚琴曲委婉的空间主页</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta charset="utf-8">
+		<title>抚琴曲委婉的个人主页</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/div_float.css"/>
+		<style type="text/css">
+			ul{
+				list-style: none;
+				margin:0px;
+				padding:0px;
+			}
+			#top{
+				font-size:30px;
+				height: 80px;
+				position: relative;
+			}
+			#head{
+				height: 40px;
+				border-left: darkred 10px solid;
+				color: darkred;
+				position: absolute;
+				left: 10px;
+				top: 50%;
+				margin-top: -20px;
+			}
+			#head b{
+				margin-left: 0.5em;
+			}
+			
+			#picture{
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				height: 60px;
+				width: 60px;
+				margin-top: -30px;
+			}
+			
+			.contain940 .box140:hover{
+				color: white;
+				background: darkred;
+				cursor: pointer;
+			}
+			.current{
+				background-color: white;
+			}
+			.bigPicture {
+				height:calc(940*0.421875px);
+				width: 940px;
+				margin: 0 10px;
+				position: relative;
+				overflow: hidden;
+			}
+			.pictureList{
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				z-index: 2;
+			}
+			.pictureList li{
+				float: left;
+				margin: 0 5px;
+				width: 30px;
+				height: 8px;
+				border: gray 2px solid;
+				border-radius: 30%;
+			}
+			.pictureBox{
+				position: absolute;
+				left: 0; top: 0;
+				width: 900%;
+				height: 100%;
+				z-index: 1;
+			}
+			.pictureBox img{
+				width: 940px;
+				height: 100%;
+				float: left;
+			}
+			
+			#right_div1 li{
+				height: 30px;
+				margin: 15px 0;
+				border-bottom: 1px gray solid;
+				position: relative;
+			}
+			#right_div1 li span{
+				position: absolute;
+				right: 10px;
+				font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+			}
+			#right_div2 li{
+				height: 60px;
+				color: gray;
+			}
+			#foot {
+				position: relative;
+				height: 60px;
+				margin-bottom: 16px;
+			}
+			#foot_left{
+				height: 40px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -20px;
+				margin-bottom: 20px;
+			}
+			#foot_left li{
+				float: left;
+				margin-right: 10px;
+			}
+			#foot_right{
+				height: 40px;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -20px;
+				color: gray;
+				line-height: 40px;
+			}
+		</style>
 	</head>
-	<body class="is-preload" onload="checkElementLegal()">
-
-		<!-- Header -->
-			<div id="header">
-
-				<div class="top">
-
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar80"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">抚琴曲委婉</h1>
-							<p>承蒙时光洗礼<br />往事已云淡风轻</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon fa-home">简介</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon fa-th">图片墙</span></a></li>
-								<li><a href="#time" id="time-link"><span class="icon fa-clock-o">时间轴(制作中)</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon fa-user">关于我</span></a></li>
-								<li><a href="#download" id="download-link"><span class="icon fa-download">下载区</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon fa-envelope">联系我</span></a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a onclick="login('home')" class="icon style2 fa-home"><span class="label">Home</span></a></li>
-							<li><a onclick="login('picture')" class="icon style2 fa-image"><span class="label">Image</span></a></li>
-							<li><a onclick="login('text')" class="icon style2 fa-file-text"><span class="label">Text</span></a></li>
-							<li><a onclick="login('time')" class="icon style2 fa-clock-o"><span class="label">Time</span></a></li>
-						</ul>
-
-				</div>
-
+	<body onload="checkElementLegal()">
+		<div id="top">
+			<div id="head"><b></b>抚琴曲委婉<b></b>的<b></b>个人主页</div>
+			<div id="picture">
+				<img src="image_new/avatar.jpg" style="width: 100%;height: 100%;">
 			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h2 class="alt">嗨，你好！<br />这是 <strong>抚琴曲委婉</strong> 的个人主页<br /></h2>
-								<p style="font-size: medium;">无心插柳柳成荫才是美丽</p>
-								<p>特定用户可点击下面图标查看其他版块<p/>
-							</header>
-							
-							<ul class="icons">
-								<li><a onclick="login('home')" class="icon style2 fa-home"><span class="label">Home</span></a></li>
-								<li><a onclick="login('picture')" class="icon style2 fa-image"><span class="label">Image</span></a></li>
-								<li><a onclick="login('text')" class="icon style2 fa-file-text"><span class="label">Text</span></a></li>
-								<li><a onclick="login('time')" class="icon style2 fa-clock-o"><span class="label">Time</span></a></li>
-							</ul>
-
-							<footer>
-								<a href="#portfolio" class="button scrolly">向下翻页</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>图片墙</h2>
-							</header>
-
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a class="image fit"><img src="images/01.jpg" alt="" /></a>
-										<header>
-											<h3>Delicious food</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a class="image fit"><img src="images/02.jpg" alt="" /></a>
-										<header>
-											<h3>Gift</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a class="image fit"><img src="images/03.jpg" alt="" /></a>
-										<header>
-											<h3>Beautiful girl</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a class="image fit"><img src="images/04.jpg" alt="" /></a>
-										<header>
-											<h3>Delicious food</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a class="image fit"><img src="images/05.jpg" alt="" /></a>
-										<header>
-											<h3>Together</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a class="image fit"><img src="images/06.jpg" alt="" /></a>
-										<header>
-											<h3>flight</h3>
-										</header>
-									</article>
-								</div>
-							</div>
-							
-							<br /><br />
-							<a class="button" onclick="login('picture')">跳转到图片空间，查看更多图片</a>
-
-						</div>
-					</section>
-				
-				<!-- time -->
-					<section id="time" class="three">
-						<div class="container">
-				
-							<header>
-								<h2>时间轴（制作中）</h2>
-							</header>
-							
-							<a class="image featured"><img src="images/banner.jpg" alt="" /></a>
-							
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="four">
-						<div class="container">
-
-							<header>
-								<h2>关于我</h2>
-							</header>
-
-							<a class="image featured"><img src="images/xusong.jpg" alt="" /></a>
-							
-							<p style="color: #222222;">一个喜欢许嵩的大学生，期望成为一名合格的程序员</p>
-
-						</div>
-					</section>
-					
-				<!-- download -->
-					<section id="download" class="five">
-						<div class="container">
-				
-							<header>
-								<h2>下载区</h2>
-							</header>
-							<p style="color: #1F2224;">跑跑单机吧标准化安装包直达快车 ① 号线。</p>
-				
-							<p style="color: black;font-weight: bolder;">
-								<a target="_blank" href="http://120.79.52.228/index/游戏启动器V3.61.exe">跑跑卡丁车单机版启动器 V3.61</a>
-								<br /><br /><a target="_blank" href="https://pan.baidu.com/s/1rf1tfyNcNYqvXo4TWiEN2Q">PP-Kart 2.0下载链接（百度云）</a>提取码：40yu
-								<br /><a target="_blank" href="https://pan.baidu.com/s/1hxGB1MBDQP6hQd4Uyn1K0A">PP-Kart 2.1下载链接（百度云）</a>提取码：6e7r
-								<br /><a target="_blank" href="https://pan.baidu.com/s/1oW7jB7a0zK0TZuG08c94_A">PP-Kart 3.0下载链接（百度云）</a>提取码：llgq
-								<br /><a target="_blank" href="https://pan.baidu.com/s/1pE7V22mBpGRNLpNbzaXcJA">Kart-PSM下载链接（百度云）</a>提取码：n39f
-								<br /><a target="_blank" href="https://pan.baidu.com/s/1uIBxERfjG17C9zpzpQRlzQ">KartRider Portable下载链接（百度云）</a>提取码：3ou1
-								<br /><a target="_blank" href="https://pan.baidu.com/s/1BFG0sQlS8z1EVh2ED-0aWg">KartRider Evolved下载链接（百度云）</a>提取码：uvy6
-							</p>
-							<p style="color: #242629;font-size: medium;">如果 ① 号线载点出现问题或被严重限速，可以转到 ② 号线下载。</p>
-							<p style="color: black;font-weight: bolder;">② 号线（跑友公社·资源QQ群）：623756886</p>
-							
-							<p style="font-size: medium;color: #222222;">
-								<br />小时候，有人给我讲了一个美好的故事<br />
-								十年来我苦苦寻找着故事的结局<br />
-								如今才发现，这故事刚刚开始<br />
-								也许我决定不了结果<br />
-								但总能让过程更美丽一些吧
-							</p>
-							
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="six">
-						<div class="container">
-
-							<header>
-								<h2>联系我</h2>
-							</header>
-
-							<p>
-								QQ：907971060<br />
-								邮箱：907971060@qq.com
-							</p>
-
-
-						</div>
-					</section>
-
+		</div>
+		<hr>
+		<div class="contain940" style="font:16px grey;text-align: center;font-weight: bold;margin-bottom: 10px;">
+			<div class="box140" onclick="login('home')" style="lint-height:40px;margin:0px;padding:10px 0;">空间主页</div>
+			<div class="box140" onclick="login('picture')" style="lint-height:40px;margin:0px;padding:10px 0;">照片墙</div>
+			<div class="box140" onclick="login('text')"  style="lint-height:40px;margin:0px;padding:10px 0;">故事空间</div>
+			<div class="box140" onclick=""  style="lint-height:40px;margin:0px;padding:10px 0;">时间轴(制作中)</div>
+			<div class="box140" style="lint-height:40px;margin:0px;padding:10px 0;"><a href="index_old.html ">回到旧版主页</a></div>
+		</div>
+		<hr style="clear: both;">
+		<div class="bigPicture" class="box940">
+			<div class="pictureList" style="width: 352px; margin-left:-176px;">
+				<ul>
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; 璐璐  Design: 抚琴曲委婉</li>
-					</ul>
-					
-					<ul class="copyright">
-						<a href="http://www.beian.miit.gov.cn/">渝ICP备19006790号</a>
+			<div class="pictureBox">
+				<img class="imgList" src="image_new/1.jpeg">
+				<img class="imgList" src="image_new/2.jpeg">
+				<img class="imgList" src="image_new/3.jpeg">
+				<img class="imgList" src="image_new/4.jpeg">
+				<img class="imgList" src="image_new/5.jpeg">
+				<img class="imgList" src="image_new/6.jpeg">
+				<img class="imgList" src="image_new/7.jpeg">
+				<img class="imgList" src="image_new/8.jpeg">
+			</div>
+		</div>
+		<div class="contain940" style="font:12px;">
+			<div class="box220">
+				<h3>照片墙</h3>
+				<p style="color: gray;">树深时见璐，溪午不闻钟<br>弹指一挥间<br>照片中记录着<br>过去的点点滴滴</p>
+				<a class="more" onclick="login('picture')" href="javascript:;">更多</a>
+			</div>
+			<div class="box220" style="width: 260px;">
+				<h3>故事空间</h3>
+				<p style="color: gray;">小时候，有人给我讲了一个的故事<br>十年来我苦苦寻找故事的结局<br>如今才发现，这故事才刚刚开始<br>也许我决定不了结果<br>但总能让过程更美丽一些吧</p>
+				<a class="more" onclick="login('text')" href="javascript:;">更多</a>
+			</div>
+			<div class="box220" style="width: 180px;">
+				<h3>时间轴</h3>
+				<p style="color: gray;">该板块暂时不开放<br>因为懒，目前正在制作当中</p>
+				<!-- <a class="more" href="#">更多</a> -->
+			</div>
+			<div class="box220">
+				<h3>下载专区</h3>
+				<p style="color: gray;">跑跑卡丁车单机版游戏<br>跑跑卡丁车单机版启动器<br><br>启动器内置下载器</p>
+				<a class="more" href="#right_div1">前往下载</a>
+			</div>
+		</div>
+		<div class="bigPicture" class="box940">
+			<!-- <div class="pictureList" style="width: 352px; margin-left:-176px;">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="pictureBox" style="width: 800%;">
+				<img class="imgList" src="image_new/1080p/1.jpg">
+				<img class="imgList" src="image_new/1080p/2.jpg">
+				<img class="imgList" src="image_new/1080p/3.jpg">
+				<img class="imgList" src="image_new/1080p/4.jpg">
+				<img class="imgList" src="image_new/1080p/5.jpg">
+				<img class="imgList" src="image_new/1080p/6.jpg">
+				<img class="imgList" src="image_new/1080p/7.jpg">
+				<img class="imgList" src="image_new/1080p/8.jpg">
+			</div> -->
+			<img class="imgList" src="image_new/2.jpeg" style="width: 100%;height: 100%;">
+		</div>
+		<div class="contain580">
+			<div class="box580">
+				<h3>白蛇：缘起 💞</h3>
+				<div class="box140" style="height: 140px; margin: 0;margin-right: 10px;">
+					<img src="image_new/4.png" width="100%" height="100%"/>
+				</div>
+				<div class="box140" style="height: 140px; margin: 0;margin-right: 10px;">
+					<img src="image_new/3.png" width="100%" height="100%"/>
+				</div>
+				<div class="box140" style="height: 140px; margin: 0;margin-right: 10px;">
+					<img src="image_new/5.png" width="100%" height="100%"/>
+				</div>
+				<p style="font-size: 14px;color:gray">
+					超级喜欢这部电影，于是便有了这<br>&lt;&lt;白蛇：缘起&gt;&gt;专题的个人主页。
+				</p>
+				<a href="index_old.html">回到旧版主页</a>
+			</div>
+			<div class="box580">
+				<h3>白蛇：缘起 💞</h3>
+				<div class="box340" style="width:380px;height: 380px; margin: 0;margin-right: 10px;">
+					<img src="image_new/6.png" width="100%" height="100%"/>
+				</div>
+			</div>
+		</div>
+		<div class="contain340">
+			<div id="right_div1" class="box340">
+				<h3>下载专区</h3>
+					<ul>
+						<li>
+							<a href="http://120.79.52.228/index/游戏启动器V3.62.exe" target="_blank">跑跑卡丁车单机版启动器 V3.62</a>
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1rf1tfyNcNYqvXo4TWiEN2Q" target="_blank">PP-Kart 2.0</a><span>提取码：40yu</span> 
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1hxGB1MBDQP6hQd4Uyn1K0A" target="_blank">PP-Kart 2.1</a><span>提取码：6e7r</span>
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1oW7jB7a0zK0TZuG08c94_A" target="_blank">PP-Kart 3.0</a><span>提取码：llgq</span>
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1pE7V22mBpGRNLpNbzaXcJA" target="_blank">Kart-PSM</a><span>提取码：n39f</span>
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1uIBxERfjG17C9zpzpQRlzQ" target="_blank">KartRider Portable</a><span>提取码：3ou1</span>
+						</li>
+						<li>
+							<a href="https://pan.baidu.com/s/1BFG0sQlS8z1EVh2ED-0aWg" target="_blank">KartRider Evolved</a><span>提取码：uvy6</span>
+						</li>
+						<li>
+							资源QQ群：623756886 （群内已上传游戏）
+						</li>
 					</ul>
 			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="../lock/login.js"></script>
-
+			<div id="right_div2" class="box340">
+				<h3>关于我</h3>
+					<ul>
+						<li>
+							一个喜欢许嵩的大学生<br />
+							期望成为一名合格的程序员
+						</li>
+						<li>
+							喜爱玩游戏，写代码<br />
+							PS：虽然都很菜
+						</li>
+						<li>
+							联系方式<br />
+							QQ：907971060<br />
+						</li>
+					</ul>
+			</div>
+		</div>
+		<hr style="clear: both;">
+		<div id="foot">
+			<div id="foot_left"><ul class="social">
+				<ul>
+					<li style="text-align: center;line-height: 40px;">
+						联系我：
+					</li>
+					<li>
+						<a href="#" title="qq">
+							<div style="background-image: url(image_new/icons.png);background-position: -1036px -1612px;height: 40px;width: 40px;"></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="wx">
+							<div style="background-image: url(image_new/icons.png);background-position: -1035px -652px;height: 40px;width: 40px;"></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="wb">
+							<div style="background-image: url(image_new/icons.png);background-position: -1035px -587px;height: 40px;width: 40px;"></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" title="zero">
+							<div style="background-image: url(image_new/icons.png);background-position: -1035px -524px;height: 40px;width: 40px;"></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div id="foot_right">
+				Copyright &copy; 抚琴曲委婉版权所有
+			</div>
+		</div>
+		<script src="../lock/login.js"></script>
+		<script src="assets/js/pictureMove.js"></script>
 	</body>
 </html>

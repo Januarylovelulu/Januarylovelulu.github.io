@@ -1,0 +1,128 @@
+body{
+	width:960px;
+	margin: 0px auto 0px auto;
+	font-family: "楷体";
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+    a:hover {
+        color: red;
+    }
+    a:active {
+        color: orange;
+    }
+/* 内容盒子 */
+.box940{
+	width: 940px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box700{
+	width: 700px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box580{
+	width: 580px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box460{
+	width: 460px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box340{
+	width: 340px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box300{
+	width: 300px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box220{
+	width: 220px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box140{
+	width: 140px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box100{
+	width: 100px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+.box60{
+	width: 60px;
+	float:left;
+	margin: 10px 10px 10px 10px;
+}
+
+/* 包含内容盒子的容器，比盒子大20px，因为margin值 */
+.contain940{
+	width: 960px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain700{
+	width: 720px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain580{
+	width: 600px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain460{
+	width: 480px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain340{
+	width: 360px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain300{
+	width: 320px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain220{
+	width: 240px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain140{
+	width: 160px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain100{
+	width: 120px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
+.contain60{
+	width: 80px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
