@@ -14,113 +14,113 @@ a {
         color: orange;
     }
 /* 内容盒子 */
-.box940{
+.box960{
 	width: 940px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box700{
+.box720{
 	width: 700px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box580{
+.box600{
 	width: 580px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box460{
+.box480{
 	width: 460px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box340{
+.box360{
 	width: 340px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box300{
+.box320{
 	width: 300px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box220{
+.box240{
 	width: 220px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box140{
+.box160{
 	width: 140px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box100{
+.box120{
 	width: 100px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
-.box60{
+.box80{
 	width: 60px;
 	float:left;
 	margin: 10px 10px 10px 10px;
 }
 
 /* 包含内容盒子的容器，比盒子大20px，因为margin值 */
-.contain940{
+.contain960{
 	width: 960px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain700{
+.contain720{
 	width: 720px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain580{
+.contain600{
 	width: 600px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain460{
+.contain480{
 	width: 480px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain340{
+.contain360{
 	width: 360px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain300{
+.contain320{
 	width: 320px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain220{
+.contain240{
 	width: 240px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain140{
+.contain160{
 	width: 160px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain100{
+.contain120{
 	width: 120px;
 	float:left;
 	background-color:transparent;
 	height: auto;
 }
-.contain60{
+.contain80{
 	width: 80px;
 	float:left;
 	background-color:transparent;
