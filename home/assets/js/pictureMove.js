@@ -3,7 +3,7 @@ function animate(element, target) {
 	clearInterval(element.animateTimer);
 	element.animateTimer = setInterval(function() {
 		var left = element.offsetLeft;
-		var speed = (target - left) / 30;
+		var speed = (target - left) / 16;
 		speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 		left += speed;
 		element.style.left = left + 'px';
@@ -11,7 +11,8 @@ function animate(element, target) {
 			clearInterval(element.animateTimer);
 			element.style.left = target + 'px';
 		}
-	}, 10);
+		console.log(left);
+	}, 6);
 }
 
 function move(boxIndex, picture_total) {
