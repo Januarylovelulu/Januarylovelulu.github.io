@@ -18,51 +18,61 @@ a {
 	width: 940px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box720{
 	width: 700px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box600{
 	width: 580px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box480{
 	width: 460px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box360{
 	width: 340px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box320{
 	width: 300px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box240{
 	width: 220px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box160{
 	width: 140px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box120{
 	width: 100px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 .box80{
 	width: 60px;
 	float:left;
 	margin: 10px 10px 10px 10px;
+	height: auto;
 }
 
 /* 包含内容盒子的容器，比盒子大20px，因为margin值 */
