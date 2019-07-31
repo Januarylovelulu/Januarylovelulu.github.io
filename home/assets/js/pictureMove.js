@@ -7,7 +7,7 @@ function animate(element, target) {
 		speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 		left += speed;
 		element.style.left = left + 'px';
-		if (left==target) {
+		if (left == target) {
 			clearInterval(element.animateTimer);
 			element.style.left = target + 'px';
 		}
@@ -23,7 +23,6 @@ function move(boxIndex, picture_total) {
 	//4.最后一张显示后，克隆第一张图片继续显示第一张
 	pictureBox.appendChild(pictureBox.children[0].cloneNode(true));
 	var ulLeft = pictureBox.offsetLeft;
-	console.log(ulLeft);
 	var ulIndex = 0; //默认第一张图片下标
 	// console.log(ulLeft);
 	//开启
@@ -92,15 +91,14 @@ function move(boxIndex, picture_total) {
 window.onload = function() {
 	move(0, 8);
 	// move(1,8);
-	
-	var picture=document.getElementsByClassName("picture");
-	for(var x=0;x<picture.length;x++)
-	{
-		picture[x].onmouseover=function(){
-			startMove(this,'size',420,420);
+
+	var picture = document.getElementsByClassName("picture");
+	for (var x = 0; x < picture.length; x++) {
+		picture[x].onmouseover = function() {
+			startMove(this, 'size', 420, 420);
 		}
-		picture[x].onmouseout=function(){
-			startMove(this,'size',140,140);
+		picture[x].onmouseout = function() {
+			startMove(this, 'size', 140, 140);
 		}
 	}
 }
