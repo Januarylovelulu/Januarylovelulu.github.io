@@ -24,7 +24,6 @@ $(function(){
 
 function readData(){
 	var goodsJson = sessionStorage.getItem('goodsJson');
-	console.log(goodsJson);
 	if(goodsJson!=null && goodsJson!=undefined){
 		$.each($.parseJSON(goodsJson), function(i,v){
 			appendGoodsToHtml(v);

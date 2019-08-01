@@ -139,6 +139,7 @@ function plusNum(element){
 
 function deleteGoods(element){
 	$(element).parent().parent().remove();
+	goodsCount();
 	saveData();
 }
 
@@ -146,5 +147,6 @@ function deleteAllGoods(){
 	$('.goods').remove();
 	$('#checkAll').prop("checked",false);
 	$('#totalGoods').html("已选商品0件");
+	goodsCount();
 	saveData();
 }
