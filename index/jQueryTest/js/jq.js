@@ -13,10 +13,15 @@ $(function(){
 		mouseover:function(){showDetail(this);},
 		mouseout:function(){hideDetail(this);}
 	});
+	
 	$('.viewBy').on('click',function(){changeFormate(this)});//查看大图还是小图
 	
 	if($('#selectedGoods').children().length==1){ //如果加载页面的时候，购物车没有物品
 		$('.none').css('display','block');//显示 购物车里没有物品 标签
+		$('#checkOut').css('display','none');
+	}
+	else{
+		$('#checkOut').css('display','block');
 	}
 	
 	$('.addGoods').on('click',function(){addGoods(this)});//添加商品
@@ -28,7 +33,6 @@ function readData(){
 		$.each($.parseJSON(goodsJson), function(i,v){
 			appendGoodsToHtml(v);
 		});
-		$('#checkOut').css('display','block');
 	}
 }
 
