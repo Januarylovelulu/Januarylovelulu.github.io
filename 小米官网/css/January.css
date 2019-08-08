@@ -1,0 +1,132 @@
+div{
+	background-color: red;
+}
+
+.containAll .center{
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+.containAll .right{
+	float: right;
+}
+
+.title{
+	height: 50px;
+	line-height: 50px;
+	font-size: 22px;
+}
+
+.pictureTitle{
+	height: 120px;
+}
+
+
+/* 右边的按钮 */
+
+.rightButton{
+	position: fixed;
+	right: 0;
+	height: 480px;
+	width: 80px;
+	top:50%;
+	margin-top: -240px;
+}
+.rightButton .button{
+	height: 80px;
+	width: 80px;
+	border: 2px solid black;
+}
+
+/* head */
+
+#head{
+	height: 40px;
+	background-color: #333333;
+}
+
+
+#head .top_navi{
+	width: auto;
+	margin: 10px 3px;
+}
+#head .top_navi:first-child{
+	margin-left: 10px;
+}
+
+
+/* navi */
+
+#navi{
+	background-color: #ffffff;
+}
+
+#navi .navi_top{
+	height: 60px;
+	margin: 20px 10px;
+}
+
+#navi .navi{
+	height: 460px;
+	margin: 20px 10px;
+}
+#navi .navi:first-child{
+	background-color: gray;
+	margin-right: 0;
+}
+#navi .navi:last-child{
+	width: 960px;
+	margin-left: 0;
+}
+
+#navi .navi_body{
+	height: 170px;
+}
+
+#navi .navi_foot {
+	height: 340px;
+}
+
+
+/* body */
+
+#body{
+	background-color: #999999;
+}
+
+#body .big{
+	height: 620px;
+}
+#body .small{
+	height: 300px;
+}
+
+#body .for_you{
+	height: 280px;
+}
+
+#body .hot_goods{
+	height: 420px;
+}
+
+#body .content{
+	height: 420px;
+}
+
+#body .vedio{
+	height: 285px;
+}
+
+/* foot */
+
+#foot{
+	background-color: #ffffff;
+}
+
+#foot .service{
+	height: 80px;
+}
+
+#foot .foot_navi{
+	height: 200px;
+}
