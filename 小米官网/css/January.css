@@ -87,11 +87,6 @@ div{
 	height: 170px;
 }
 
-#navi .navi_foot {
-	height: 340px;
-}
-
-
 /* body */
 
 #body{
@@ -106,6 +101,11 @@ div{
 }
 #body .smaller{
 	height: 140px;
+}
+
+
+#dody .xiaomi_flashPurchase {
+	height: 340px;
 }
 
 #body .for_you{
