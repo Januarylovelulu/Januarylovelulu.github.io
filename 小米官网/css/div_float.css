@@ -142,6 +142,12 @@ a {
 	background-color:transparent;
 	height: auto;
 }
+.contain300{
+	width: 300px;
+	float:left;
+	background-color:transparent;
+	height: auto;
+}
 .contain240{
 	width: 240px;
 	float:left;

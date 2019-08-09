@@ -63,20 +63,24 @@ div{
 
 #navi .navi_top{
 	height: 60px;
-	margin: 20px 10px;
+	margin: 20px 10px 5px 10px;
 }
 
+#navi #naviBigPicture{
+	position: relative;
+}
 #navi .navi{
 	height: 460px;
 	margin: 20px 10px;
 }
 #navi .navi:first-child{
-	background-color: gray;
-	margin-right: 0;
+	position: absolute;
+	background-color: rgba(55,55,55,0.6);
 }
 #navi .navi:last-child{
+	position: absolute;
 	width: 960px;
-	margin-left: 0;
+	right: 0px;
 }
 
 #navi .navi_body{
@@ -99,6 +103,9 @@ div{
 }
 #body .small{
 	height: 300px;
+}
+#body .smaller{
+	height: 140px;
 }
 
 #body .for_you{
