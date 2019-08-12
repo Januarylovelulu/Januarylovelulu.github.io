@@ -21,7 +21,6 @@ div{
 	height: 120px;
 }
 
-
 /* 右边的按钮 */
 
 .rightButton{
@@ -58,7 +57,11 @@ div{
 /* navi */
 
 #navi{
-	background-color: #ffffff;
+	
+}
+
+#navi #naviBigPicture div{
+	background-color:transparent;
 }
 
 #navi .navi_top{
@@ -75,12 +78,127 @@ div{
 }
 #navi .navi:first-child{
 	position: absolute;
-	background-color: rgba(55,55,55,0.6);
+	background: rgba(105,101,101,0.6) !important;
+	z-index: 3;
 }
-#navi .navi:last-child{
+#navi .goodsList{
 	position: absolute;
-	width: 960px;
 	right: 0px;
+	z-index: 3;
+}
+#navi .goodsList .containBox{
+	border: 1px solid #cccccc;
+	background-color: white !important;
+	height: 458px;
+	box-shadow:5px 5px 10px #cccccc;
+}
+#navi .goodsList .containBox img{
+	height: 40px;
+	width: 40px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+#navi .goodsList .containBox div{
+	height: 56px;
+}
+#navi .goodsList .containBox span{
+	height: 56px;
+	line-height: 56px;
+	margin-left: 10px;
+}
+#navi .goodsList .containBox span:hover{
+	color: #ff6700;
+}
+
+#navi .navi .goodsBreedList{
+	list-style: none;
+	padding: 0;
+}
+#navi .navi .goodsBreedList li{
+	padding-left: 30px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 14px;
+	color: white;
+}
+#navi .navi .goodsBreedList li i{
+	width: 14px;
+	height: 14px;
+	float: right;
+	margin-right: 16px;
+	margin-top: 14px;
+}
+.navi_active{
+	cursor: pointer;
+	background-color: #ff6700;
+}
+
+#navi .naviPicture{
+	position: relative;
+}
+#navi .navi_leftBtn{
+	position: absolute;
+	left: 230px;
+	top: 230px;
+	height: 70px;
+	width: 40px;
+	margin-top: -35px;
+	z-index: 3;
+	background-image: url(../img/navi/icon-slides.png);
+	background-position: -84px 0px;
+	overflow: hidden;
+}
+#navi .navi_rightBtn{
+	position: absolute;
+	right: 10px;
+	top: 230px;
+	height: 70px;
+	width: 40px;
+	margin-top: -35px;
+	z-index: 3;
+	background-image: url(../img/navi/icon-slides.png);
+	background-position: -124px 0px;
+	overflow: hidden;
+}
+.navi_btnActive_left{
+	cursor: pointer;
+	background-image: url(../img/navi/icon-slides.png) !important;
+	background-position: 0px 0px !important;
+}
+.navi_btnActive_right{
+	cursor: pointer;
+	background-image: url(../img/navi/icon-slides.png) !important;
+	background-position: -42px 0px !important;
+}
+
+#navi .changePictureList{
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	right: 100px;
+	height: 22px;
+	bottom: 20px;
+	z-index: 3;
+}
+#navi .changePictureList li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px;
+	border: 2px solid #fff;
+	border-color: hsla(0,0%,100%,0.3);
+	border-radius: 10px;
+	overflow: hidden;
+	background: rgba(0,0,0,0.4);
+	opacity: 1;
+}
+#navi .changePictureList li:hover{
+	cursor: pointer;
+	background: hsla(0,0%,100%,0.4);
+}
+.navi_circleActive{
+	cursor: pointer;
+	background: hsla(0,0%,100%,0.4) !important;
 }
 
 #navi .navi_body{
@@ -104,7 +222,7 @@ div{
 }
 
 
-#dody .xiaomi_flashPurchase {
+#body .xiaomi_flashPurchase {
 	height: 340px;
 }
 

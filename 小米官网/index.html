@@ -4,8 +4,44 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/january.js"></script>
 		<link rel="stylesheet" href="css/div_float.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
 		<link rel="stylesheet" href="css/January.css">
+		<script type="text/javascript">
+			$(function(){
+				
+				/* January navi */
+				$('.navi:first li').on({
+					'mouseover':function(){naviListHover(this);},
+					'mouseout':function(){naviListOut(this);}
+				});
+				$('.containBox').on({
+					'mouseover':function(){naviListHover(this);},
+					'mouseout':function(){naviListOut(this);}
+				});
+				$('.navi_leftBtn').on({
+					'mouseover':function(){$(this).addClass('navi_btnActive_left');},
+					'mouseout':function(){$(this).removeClass('navi_btnActive_left');},
+					'click':function(){naviChangePicture(this);}
+				});
+				$('.navi_rightBtn').on({
+					'mouseover':function(){$(this).addClass('navi_btnActive_right');},
+					'mouseout':function(){$(this).removeClass('navi_btnActive_right');},
+					'click':function(){naviChangePicture(this);}
+				});
+				$('.changePictureList li').on('click',function(){changePictureCircleClick(this)});
+				var timerNavi=setInterval(function(){
+					autoChangePicture();
+				},2500);
+				$('.naviPicture,.changePictureList,.navi_leftBtn,.navi_rightBtn').on({
+					'mouseover':function(){changeActive(true);},
+					'mouseout':function(){changeActive(false);}
+				});
+				/* January navi */
+				
+			});
+		</script>
 	</head>
 	<body>
 		<div class="rightButton">
@@ -44,9 +80,801 @@
 					<div class="navi_top box240"></div>
 				</div>
 				<div id="naviBigPicture" class="contain1200">
-					<div class="navi box240"></div>
-					<div class="navi box1200"></div>
-					<div class="navi box960"></div>
+					<div class="navi box240">
+						<ul class="goodsBreedList">
+							<li>手机 电话卡<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>电视 盒子<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>笔记本 平板<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>家电 插线板<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>出行 穿戴<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>智能 路由器<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>电源 配件<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>健康 儿童<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>耳机 音箱<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+							<li>生活 肩包<i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+						</ul></div>
+					<div class="navi box1200 naviPicture">
+						<img src="img/navi/0.jpg" style="width: 100%;height: 100%;">
+					</div>
+					<div class="navi_leftBtn"></div>
+					<div class="navi_rightBtn"></div>
+					<ul class="changePictureList">
+						<li class="navi_circleActive"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<div class="navi goodsList contain960" style="display: none;">
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+						</div>
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+						</div>
+						<div class="containBox contain480" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+						</div>
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/mobile.jpg">
+								<span>小米手机</span>
+							</div>
+						</div>
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+						</div>
+						<div class="containBox contain480" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/TV.jpg">
+								<span>小米电视</span>
+							</div>
+						</div>
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+						</div>
+						<div class="containBox contain480" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/earphone.jpg">
+								<span>小米耳机</span>
+							</div>
+						</div>
+						<div class="containBox contain480" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+						</div>
+						<div class="containBox contain960" style="display: none;">
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+							<div class="box240">
+								<img src="img/navi/naviIcon/uav.jpg">
+								<span>小米无人机</span>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="contain1200">
 					<div class="navi_body box240"></div>
