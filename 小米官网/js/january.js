@@ -1,5 +1,7 @@
 function naviListHover(element){
-	$(element).addClass('navi_active');
+	console.log($(element).index());
+	$('.navi:first li').removeClass('navi_active');
+	$('.navi:first li').eq($(element).index()).addClass('navi_active');
 	$('.goodsList').css('display','block');
 	$('.goodsList').find('.containBox').css('display','none');
 	$('.goodsList').find('.containBox').eq($(element).index())
@@ -7,7 +9,7 @@ function naviListHover(element){
 }
 
 function naviListOut(element){
-	$(element).removeClass('navi_active');
+	$('.navi:first li').removeClass('navi_active');
 	$('.goodsList').css('display','none');
 	$('.goodsList').find('.containBox').css('display','none');
 }
