@@ -22,7 +22,7 @@ function naviInitial(){//初始函数
 	
 	var timerNavi=setInterval(function(){//轮播图
 		autoChangePicture();
-	},2500);
+	},2000);
 	
 	$('.naviPicture,.changePictureList,.navi_leftBtn,.navi_rightBtn').on({
 		'mouseover':function(){changeActive(true);},
