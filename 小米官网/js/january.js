@@ -1,5 +1,37 @@
+
+function naviInitial(){//初始函数
+	$('.navi:first li').on({
+		'mouseover':function(){naviListHover(this);},
+		'mouseout':function(){naviListOut(this);}
+	});
+	$('.containBox').on({
+		'mouseover':function(){naviListHover(this);},
+		'mouseout':function(){naviListOut(this);}
+	});
+	$('.navi_leftBtn').on({
+		'mouseover':function(){$(this).addClass('navi_btnActive_left');},
+		'mouseout':function(){$(this).removeClass('navi_btnActive_left');},
+		'click':function(){naviChangePicture(this);}
+	});
+	$('.navi_rightBtn').on({
+		'mouseover':function(){$(this).addClass('navi_btnActive_right');},
+		'mouseout':function(){$(this).removeClass('navi_btnActive_right');},
+		'click':function(){naviChangePicture(this);}
+	});
+	$('.changePictureList li').on('click',function(){changePictureCircleClick(this)});
+	
+	var timerNavi=setInterval(function(){//轮播图
+		autoChangePicture();
+	},2500);
+	
+	$('.naviPicture,.changePictureList,.navi_leftBtn,.navi_rightBtn').on({
+		'mouseover':function(){changeActive(true);},
+		'mouseout':function(){changeActive(false);}
+	});
+}
+
+
 function naviListHover(element){
-	console.log($(element).index());
 	$('.navi:first li').removeClass('navi_active');
 	$('.navi:first li').eq($(element).index()).addClass('navi_active');
 	$('.goodsList').css('display','block');
@@ -14,7 +46,7 @@ function naviListOut(element){
 	$('.goodsList').find('.containBox').css('display','none');
 }
 
-var naviIndex=0;
+var naviIndex=0;//图片索引
 var active=false;//手动切图的开关
 var autoActive=false;//自动切图的开关
 
@@ -80,8 +112,8 @@ function changePicture(){//实际切换图片的函数
 			div.css('opacity',1);
 			active=false;
 		}
-		opacity+=0.02;
-	},16);
+		opacity+=0.04;
+	},20);
 }
 
 function changeActive(element){//如果鼠标移入为Ture，则不自动切换图片
